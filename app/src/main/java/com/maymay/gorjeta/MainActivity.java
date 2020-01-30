@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
         String valor = editValor.getText().toString();
         if(valor.equals("")){
-
+            //pop up here
         }else{
             valorConta = Double.parseDouble(valor);
             valorGorjeta = (valorConta * porcentagem) / 100;
             valorTotal = valorConta + valorGorjeta;
-            textGorjeta.setText("R$" + String.format("%.2f", valorGorjeta));
-            textTotal.setText("R$" + String.format("%.2f", valorTotal));
+            textGorjeta.setText(getString(R.string.currency_real, valorGorjeta));
+            textTotal.setText(getString(R.string.currency_real, valorTotal));
         }
     }
 }
